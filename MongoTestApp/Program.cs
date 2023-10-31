@@ -130,8 +130,7 @@ Console.WriteLine();
 
 using (var context = new CustomersContext(mongoClient))
 {
-    var name = "Willow";
-    var customer = await context.Customers.SingleAsync(c => c.Name == name);
+    var customer = await context.Customers.SingleAsync(c => c.Name == "Willow");
 
     var address = customer.ContactInfo.ShippingAddress;
     var mobile = customer.ContactInfo.Phones.MobilePhone;
